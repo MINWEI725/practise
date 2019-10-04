@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>演示动画</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+     <input type="button" value="显示" id="show"/>
+     <input type="button" value="隐藏" id="hide"/>
+     <input type="button" value="显隐切换" id="toggle"/>
+     <input type="button" value="滑入" id="slideDown"/>
+     <input type="button" value="滑出" id="slideUp"/>
+     <input type="button" value="滑入出切换" id="slideToggle"/>
+     <div id="div1"></div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+     $(function () {
+        $("#show").click(function () {
+          //  $("#div1").show(2000);
+         //   $("#div1").show("fast");
+           // $("#div1").show("normal");
+           // $("#div1").show("slow");
+            $("#div1").show(2000,function(){
+              alert("动画完毕");
+            })
+        }) ;
+
+        $("#hide").click(function () {
+            //$("#div1").hide();
+            //$("#div1").hide(2000);
+           // $("#div1").hide(2000,function () {
+            //    alert("隐藏了")
+           // })
+        });
+
+        $("#toggle").click(function () {
+            $("#div1").toggle(1000);
+        });
+
+        $("#slideDown").click(function () {
+          //$("#div1").slideDown();
+            $("#div1").slideDown(2000,function () {
+                alert("划入完毕");
+            })
+        });
+        $("#slideUp").click(function () {
+          // $("#div1").slideUp();
+            $("#div1").slideUp(2000,function () {
+                alert("滑出完毕");
+            });
+        });
+        $("#slideToggle").click(function () {
+           $("#div1").slideToggle(1000);
+        });
+     });
+</script>
