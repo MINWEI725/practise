@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }/*雪花键代表标签 */
+        body{
+            background-color: darkgray;
+        }/*设置背景颜色*/
+        div {
+            text-align: center;
+            margin: 400px auto;
+        }/*text-align，规定“元素中”的文本的水平对齐方式居中,margin边界 ,auto的意思是页面左右空白自适应并且相等的意思 */
+        span{
+            position: relative;
+            font:normal 500 6rem 'Verala Round',sans-serif;
+            color: white;
+            animation: bounce 0.75s;cubic-bexier(0.05,0,0.2,1)infinite alternate;
+            top:0px;
+        }/* position 属性规定元素的定位类型；position：relative相对定位，它可以配合“top”、“bottom”、“left”、“right”
+        这4个偏移量来实现相对它所属父元素的相对定位；rem是一种度量单位；font定义字形属性；sans-serif无衬线字体，是一类字体，
+        它在操作系统或者浏览器里是可以设置的；
+        animation 属性是设置普通动画属性的缩写属性：
+        animation-name
+        animation-duration
+        animation-timing-function
+        animation-delay
+        animation-iteration-count
+        animation-direction
+        animation-fill-mode
+        animation-play-state
+        bounce:跳动;cubic:立体的，立方的；
+         */
+        @keyframes bounce {
+            0% {
+                top: 0;
+                text-shadow: rgba(255,255,255,0.4) 0 0 0.05em;
+
+            }/*text-shadow属性连接一个或更多的阴影文本*/
+            100% {
+                top: -1em;
+                text-shadow: rgba(255,255,255,0.4) 0 1em 0.35em;
+            }
+        }
+        span:nth-child(1){
+            animation-delay:0s;
+        }/*指定每个 span 元素匹配的父元素中第 1 个子元素的动画延时*/
+        span:nth-child(2){
+            animation-delay: 0.0833333333s;
+        }
+        span:nth-child(3){
+            animation-delay: 0.1666666667s;
+        }
+        span:nth-child(4){
+            animation-delay:  0.25s;
+        }
+        span:nth-child(5){
+            animation-delay: 0.3333333333s;
+        }
+        span:nth-child(6){
+            animation-delay: 0.4166666667s;
+        }
+        sapn:nth-child(7){
+            animation-delay: 0.520s;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <span>一</span>
+    <span>步</span>
+    <span>一</span>
+    <span>个</span>
+    <span>脚</span>
+    <span>印</span>
+</div>
+
+
+</body>
+</html>
