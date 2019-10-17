@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#username").blur(function () {
+                var ser = $(this).val();
+                $.ajax({
+                    url:"UserNameServlet",
+                    type:"POST",
+                    data:{"username":ser},
+                    success:function (data) {
+                        var info = $("#information");
+                       if (data.result){
+                         info.html(data.msg);
+                         info.css("color","red");
+                       }else{
+                           info.html(data.msg);
+                           info.css("color","green");
+                       }
+                    },
+                    error:function(){
+                        alert("出错了")
+                    },
+                    dataType:"json"
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+<form>
+    <h2>Servlet+Ajax+Json 当输入完用户名离开输入框焦点时，会对账号进行校验该账号是否已经被注册   &nbsp&nbsp 已经注册的账号“zhangsan”</h2>
+    <input id="username" name="username" placeholder="请输入用户名"><span id="information"></span><br>
+    <input type="password"><br>
+    <button type="submit">注册</button>
+</form>
+</body>
+</html>
